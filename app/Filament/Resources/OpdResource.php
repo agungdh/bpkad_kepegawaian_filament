@@ -24,7 +24,8 @@ class OpdResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('opd')
+                    ->required()
             ]);
     }
 
@@ -41,11 +42,7 @@ class OpdResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-            ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                Tables\Actions\DeleteAction::make(),
             ]);
     }
 
