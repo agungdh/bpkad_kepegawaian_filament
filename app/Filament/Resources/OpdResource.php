@@ -18,6 +18,7 @@ class OpdResource extends Resource
 {
     protected static ?string $model = Opd::class;
 
+    protected static ?string $navigationLabel = 'OPD';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
@@ -25,6 +26,7 @@ class OpdResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('opd')
+                    ->label('OPD')
                     ->required()
             ]);
     }
@@ -35,7 +37,8 @@ class OpdResource extends Resource
             ->columns([
                 TextColumn::make('opd')
                     ->searchable(isIndividual: true)
-                    ->sortable(),
+                    ->sortable()
+                    ->label('OPD'),
             ])
             ->filters([
                 //
@@ -43,7 +46,8 @@ class OpdResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
-            ]);
+            ])
+            ->recordUrl(false);
     }
 
     public static function getRelations(): array

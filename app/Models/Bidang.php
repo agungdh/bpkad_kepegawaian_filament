@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Opd extends Model
+class Bidang extends Model
 {
-    /** @use HasFactory<\Database\Factories\OpdFactory> */
+    /** @use HasFactory<\Database\Factories\BidangFactory> */
     use HasFactory, HasUlids;
 
-    public function bidangs(): HasMany
+    public function opd(): BelongsTo
     {
-        return $this->hasMany(Opd::class);
+        return $this->belongsTo(Opd::class);
     }
 }

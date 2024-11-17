@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\Opd;
+use App\Models\Bidang;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class OpdSeeder extends Seeder
+class BidangSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Opd::factory(100)->create();
+        Bidang::factory(100)->create();
     }
 }
